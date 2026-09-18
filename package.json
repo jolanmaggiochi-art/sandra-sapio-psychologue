@@ -4,11 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "build": "next build && node scripts/clean-out.cjs",
+    "start": "npx serve out",
+    "lint": "eslint",
+    "optimize:images": "node scripts/optimize-images.cjs",
+    "preview": "npx serve out",
+    "clean": "node scripts/clean-out.cjs"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -20,6 +25,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "playwright": "^1.59.1",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
